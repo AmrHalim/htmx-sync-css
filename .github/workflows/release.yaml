@@ -43,7 +43,7 @@ jobs:
 
       - name: Release snapshot
         run: |
-          pnpm changeset
+          pnpm changeset --no-git-checks
           pnpm publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
