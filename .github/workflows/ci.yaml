@@ -39,14 +39,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Release snapshot
-        run: |
-          pnpm release-snapshot
-          pnpm publish-snapshot
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: false
-
       - name: Create Release Pull Request (if needed)
         id: changesets
         uses: changesets/action@v1
@@ -60,6 +52,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
+
+      - name: Do you want to release a snapshot?
+        run: |
+          echo "Snapshot unlocked!"
+        if: github.ref != 'refs/heads/master'
+
+      - name: Release snapshot
+        run: |
+          pnpm release-snapshot
+          pnpm publish-snapshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.ref != 'refs/heads/master'
 
       - name: Post published version to GitHub checks
         run: |
