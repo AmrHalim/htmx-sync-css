@@ -48,7 +48,6 @@ jobs:
         if: github.ref != 'refs/heads/master'
 
       - name: Release
-        id: release
         run: |
           pnpm release
         env:
@@ -57,7 +56,6 @@ jobs:
 
       - name: Create Release Pull Request (if needed)
         uses: changesets/action@v1
-        needs: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
