@@ -55,7 +55,7 @@ type HTMXExtension = {
   onEvent: <T extends HTMXEventName>(name: T, event: HTMXEvent<T>) => void;
 };
 
-declare module "htmx" {
+declare module "htmx.org" {
   function defineExtension(name: string, ext: HTMXExtension): void;
   type HtmxExtensions = {
     "sync-css": HTMXExtension;
