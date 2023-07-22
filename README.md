@@ -28,16 +28,16 @@ Now if you need to style this span to look special or different, you'd usually n
 
 You can update the head's styles if you follow 3 steps:
 
-1.  Add `sync-css` extension to your original HTML head
+1.  Add `sync-css` extension to your original HTML head.
 
     ```html
     <!-- htmx  -->
-    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://unpkg.com/htmx.org"></script>
     <!-- sync-css extension -->
-    <script src="http://localhost:9000/bundle.js" defer></script>
+    <script src="https://unpkg.com/htmx-sync-css" defer></script>
     ```
 
-2.  Wrap either your `body` or the nearest element you want the extension to take effect on with `htmx-ext="sync-css"`
+2.  Wrap either your `body` or the nearest element you want the extension to take effect on with `htmx-ext="sync-css"`.
 
     ```html
     <div htmx-ext="sync-css">
