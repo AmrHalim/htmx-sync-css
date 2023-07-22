@@ -1,6 +1,6 @@
 {
   "name": "htmx-sync-css",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "htmx extension to sync CSS from response text.",
   "main": "dist/bundle.js",
   "files": [
