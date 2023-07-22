@@ -1,5 +1,11 @@
 # htmx-sync-css
 
+## 1.0.2
+
+### Patch Changes
+
+- f56dbff: Adding Changeset
+
 ## 1.0.1
 
 ### Patch Changes
