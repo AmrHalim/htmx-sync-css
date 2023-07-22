@@ -43,8 +43,8 @@ jobs:
 
       - name: Release snapshot
         run: |
-          pnpm changeset --no-git-checks
-          pnpm publish
+          changeset version --snapshot
+          changeset publish --tag canary
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
