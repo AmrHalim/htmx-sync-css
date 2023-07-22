@@ -1,0 +1,31 @@
+{
+  "name": "htmx-sync-css",
+  "version": "1.0.0",
+  "description": "htmx extension to sync CSS from response text.",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "webpack --config webpack.config.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "htmx",
+    "css"
+  ],
+  "author": "Amr Halim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AmrHalim/htmx-sync-css/issues"
+  },
+  "homepage": "https://github.com/AmrHalim/htmx-sync-css#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "htmx.org": "^1.9.3"
+  }
+}

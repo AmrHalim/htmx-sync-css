@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5", // The ECMAScript target version
+    "module": "CommonJS", // Use ES6 modules
+    "lib": ["dom", "es6"], // Include DOM and ES6 APIs
+    "outDir": "dist", // Output directory for compiled files
+    "declaration": true, // Generate declaration files (.d.ts)
+    "sourceMap": true, // Generate source maps for better debugging
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Enable interoperability with CommonJS modules
+    "moduleResolution": "node", // Use Node.js-style module resolution
+    "allowSyntheticDefaultImports": true // Allow importing modules with default imports from modules with named exports
+  },
+  "include": ["src"], // Include source files from the 'src' directory
+  "exclude": ["node_modules"] // Exclude 'node_modules' directory from compilation
+}
