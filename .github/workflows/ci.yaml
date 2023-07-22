@@ -45,7 +45,9 @@ jobs:
           pnpm publish-snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: github.ref != 'refs/heads/master'
+        if: |
+          github.ref != 'refs/heads/master' &&
+          always()
 
       - name: Create Release Pull Request (if needed)
         id: changesets
