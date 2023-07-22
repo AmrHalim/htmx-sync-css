@@ -11,7 +11,7 @@ Let's assume you have the following `htmx` snippet:
 
 ```html
 <div>
-  <button htmx-get="/get-em" htmx-target="#target">Get 'em!</button>
+  <button hx-get="/get-em" hx-target="#target">Get 'em!</button>
   <span id="target"></span>
 </div>
 ```
@@ -37,11 +37,11 @@ You can update the head's styles if you follow 3 steps:
     <script src="https://unpkg.com/htmx-sync-css" defer></script>
     ```
 
-2.  Wrap either your `body` or the nearest element you want the extension to take effect on with `htmx-ext="sync-css"`.
+2.  Wrap either your `body` or the nearest element you want the extension to take effect on with `hx-ext="sync-css"`.
 
     ```html
-    <div htmx-ext="sync-css">
-      <button htmx-get="/get-em" htmx-target="#target">Get 'em!</button>
+    <div hx-ext="sync-css">
+      <button hx-get="/get-em" hx-target="#target">Get 'em!</button>
       <span id="target"></span>
     </div>
     ```
