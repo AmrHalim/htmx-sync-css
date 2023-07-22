@@ -47,16 +47,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref != 'refs/heads/master'
 
-      - name: Create Release Pull Request (if needed)
-        id: changesets
-        uses: changesets/action@v1
+      - name: Release
+        id: release
+        run: |
+          pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
 
-      - name: Release
-        run: |
-          pnpm release
+      - name: Create Release Pull Request (if needed)
+        uses: changesets/action@v1
+        needs: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
