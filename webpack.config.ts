@@ -2,6 +2,7 @@ import * as path from "path";
 import type { Configuration } from "webpack";
 
 const config: Configuration = {
+  mode: "production",
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
