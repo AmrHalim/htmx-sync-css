@@ -1,5 +1,11 @@
 # htmx-sync-css
 
+## 1.0.3
+
+### Patch Changes
+
+- d755db9: Update file structure. Update README.
+
 ## 1.0.2
 
 ### Patch Changes
