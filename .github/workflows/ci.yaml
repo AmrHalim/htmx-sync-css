@@ -27,9 +27,8 @@ jobs:
       - name: Build
         run: pnpm build
 
-      # # Change this to customize your test command.
-      # - name: Test
-      #   run: pnpm test
+      - name: Test
+        run: pnpm test
 
       - name: Create .npmrc
         run: |
