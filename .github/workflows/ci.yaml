@@ -1,9 +1,7 @@
 # .github/workflows/ci.yml
 name: CI
-on:
-  push:
-    branches-ignore:
-      - $default-branch
+on: push
+
 jobs:
   ci:
     name: CI
@@ -47,6 +45,21 @@ jobs:
           pnpm publish-snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.ref != 'refs/heads/master'
+
+      - name: Create Release Pull Request (if needed)
+        id: changesets
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.ref == 'refs/heads/master'
+
+      - name: Release
+        run: |
+          pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.ref == 'refs/heads/master'
 
       - name: Post published version to GitHub checks
         run: |
